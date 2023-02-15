@@ -17,6 +17,7 @@ router.get('/meta_wa_callbackurl', (req, res) => {
     try {
         console.log('GET: Someone is pinging me!');
 
+        console.log(req.query);
         let mode = req.query['hub.mode'];
         let token = req.query['hub.verify_token'];
         let challenge = req.query['hub.challenge'];
