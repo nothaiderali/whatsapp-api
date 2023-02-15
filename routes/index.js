@@ -4,9 +4,9 @@ const router = require('express').Router();
 const WhatsappCloudAPI = require('whatsappcloudapi_wrapper');
 
 const Whatsapp = new WhatsappCloudAPI({
-    accessToken: process.env.Meta_WA_accessToken,
-    senderPhoneNumberId: process.env.Meta_WA_SenderPhoneNumberId,
-    WABA_ID: process.env.Meta_WA_wabaId,
+    accessToken: 'EABLtwfrbyC0BADuFamFdnQyXkI5NMFnWnanGXd0cWEWMy8u3mx056j3NOqwv7xQ8MVHrbZBiqL5nB1L6HncdlLKgH0D69Hb4nWilQZCje1fyGeKo5Tej48M3XEA3zaZAZAv1HgxZAfOQZCQL5sHeDmtkN8N8HzudeqQYTWUpNSQsC8MDGChvkDnmZBcZCZCCSw2TAjjHhvUVvsAZDZD',
+    senderPhoneNumberId: '105055832516532',
+    WABA_ID: '115541034788584',
 });
 
 const EcommerceStore = require('./../utils/ecommerce_store.js');
@@ -25,7 +25,7 @@ router.get('/meta_wa_callbackurl', (req, res) => {
             mode &&
             token &&
             mode === 'subscribe' &&
-            process.env.Meta_WA_VerifyToken === token
+            'YouCanSetYourOwnToken' === token
         ) {
             return res.status(200).send(challenge);
         } else {
